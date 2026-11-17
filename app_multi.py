@@ -24,8 +24,8 @@ st.set_page_config(page_title="PairCheck AI", layout="centered")
 st.markdown("""<style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
 html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
-#MainMenu, footer { visibility: hidden; }
-.block-container { max-width: 860px; padding-top: 1rem; padding-bottom: 5rem; }
+footer { visibility: hidden; }
+.block-container { max-width: 860px; padding-top: 3rem !important; padding-bottom: 5rem; }
 .brand { font-size: 1.35rem; font-weight: 500; color: #12283F; padding-top: .35rem; }
 .sevrow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .sevlbl { font-size: 1.1rem; color: #5F5E5A; }
