@@ -1,0 +1,53 @@
+# Python bytecode and cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# Test, coverage, and type-checker artefacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE settings (uncomment if you do not want to share these)
+# .vscode/
+# .idea/
+
+# IMPORTANT:
+# Do not ignore required model files, reference datasets, lookup tables,
+# or other assets needed by PairCheck AI at runtime.
+# If a required file is too large for GitHub, use Git LFS or external storage.
