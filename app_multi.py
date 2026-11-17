@@ -20,6 +20,7 @@ NOT_ASSESSED = ("Pairs are checked one at a time. Combinations of three or more 
 e = html.escape
 
 st.set_page_config(page_title="PairCheck AI", layout="centered")
+
 st.markdown("""<style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap');
 html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
@@ -35,19 +36,57 @@ html, body, [class*="css"] { font-family: 'IBM Plex Sans', sans-serif; }
          align-items: center; justify-content: center; font-size: .7rem; }
 .big .glyph { width: 26px; height: 26px; font-size: .95rem; }
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 1rem 0 .3rem; }
-.card { background: #F5F7FA; border-radius: 8px; padding: 10px 12px; }
-.card .k { font-size: .8rem; color: #5F5E5A; } .card .v { font-size: 1.5rem; font-weight: 500; }
+
+.card {
+    background: #F5F7FA;
+    color: #1F2937;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+.card .k { font-size: .8rem; color: #5F5E5A; }
+.card .v { font-size: 1.5rem; font-weight: 500; color: #12283F; }
+
 .note { background: #E6F1FB; color: #0C447C; border-radius: 8px; padding: 10px 14px; font-size: .88rem;
         margin: .8rem 0 1rem; }
 .grp { font-size: .85rem; color: #5F5E5A; margin: 1rem 0 .4rem; }
-.prow { display: flex; align-items: center; gap: 12px; border: .5px solid #D3D1C7; border-radius: 12px;
-        padding: 9px 14px; background: #fff; margin-bottom: .3rem; }
-.pname { flex: 1; } .pstat { font-size: .8rem; color: #5F5E5A; min-width: 70px; text-align: right; }
+
+.prow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: .5px solid #D3D1C7;
+    border-radius: 12px;
+    padding: 9px 14px;
+    background: #FFFFFF;
+    color: #1F2937;
+    margin-bottom: .3rem;
+}
+.pname { flex: 1; color: #1F2937; }
+.pstat { font-size: .8rem; color: #5F5E5A; min-width: 70px; text-align: right; }
+
 .diagram { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;
            margin-bottom: .8rem; }
-.pill { padding: 5px 14px; border: .5px solid #B4B2A9; border-radius: 20px; background: #F5F7FA; }
-.panel { border: .5px solid #D3D1C7; border-radius: 12px; padding: 14px 16px; background: #fff;
-         height: 100%; margin-bottom: .6rem; }
+
+.pill {
+    padding: 5px 14px;
+    border: .5px solid #B4B2A9;
+    border-radius: 20px;
+    background: #F5F7FA;
+    color: #1F2937;
+}
+
+.panel {
+    border: .5px solid #D3D1C7;
+    border-radius: 12px;
+    padding: 14px 16px;
+    background: #FFFFFF;
+    color: #1F2937;
+    height: 100%;
+    margin-bottom: .6rem;
+}
+.panel * { color: inherit; }
+.panel .ph { color: #5F5E5A; }
+
 .ph { font-size: .85rem; color: #5F5E5A; margin-bottom: 6px; }
 .brow { display: flex; align-items: center; gap: 10px; margin-top: 6px; font-size: .85rem; }
 .bn { width: 120px; } .bp { width: 36px; text-align: right; }
@@ -58,7 +97,6 @@ mark { background: #FAEEDA; color: #633806; padding: 0 2px; border-radius: 3px; 
 .foot { position: fixed; left: 0; right: 0; bottom: 0; background: #12283F; color: #EEF2F7;
         font-size: .8rem; padding: .5rem 1rem; text-align: center; z-index: 99; }
 </style>""", unsafe_allow_html=True)
-
 STYLE = {"Major": ("#FCEBEB", "#791F1F", "#A32D2D", "!"), "Moderate": ("#FAEEDA", "#633806", "#BA7517", "!"),
          "Minor": ("#E6F1FB", "#0C447C", "#378ADD", "i"), None: ("#F1EFE8", "#444441", "#888780", "?")}
 RANK = {"Major": 0, "Moderate": 1, "Minor": 2}
